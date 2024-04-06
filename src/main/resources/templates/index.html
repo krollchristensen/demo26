@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Demo Zealand Application</title>
+</head>
+<body>
+<h2>Index Side</h2>
+<!-- Link til Vis Person side -->
+<a href="/showPerson">Vis Person</a>
+<a href="/cssDemo">CSS Demo</a>
+<a href="/tableDemo">Table Demo</a>
+<a href="/layoutDemo">Layout Demonstrations</a>
+
+<h2>Dropdown Eksempel</h2>
+<select>
+    <option th:each="option : ${options}" th:text="${option}"></option>
+</select>
+
+<h2>Tjekbokse Eksempel</h2>
+<input type="checkbox" th:checked="${isChecked}"/> Er denne tjekket?
+
+<h2>Billedupload Eksempel</h2>
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="image"/>
+    <button type="submit">Upload</button>
+</form>
+<h3 th:text="${message}"></h3>
+
+<!-- Viser den uploadede fil hvis tilgængelig -->
+<div th:if="${uploadedFilePath}">
+    <h2>Uploadet Fil</h2>
+    <img th:src="@{${uploadedFilePath}}" th:alt="${message}" th:if="${uploadedFilePath.endsWith('.jpg') || uploadedFilePath.endsWith('.png')}"/>
+    <a th:href="@{${uploadedFilePath}}" th:if="${!uploadedFilePath.endsWith('.jpg') && !uploadedFilePath.endsWith('.png')}" download>Download Fil</a>
+</div>
+
+</body>
+</html>

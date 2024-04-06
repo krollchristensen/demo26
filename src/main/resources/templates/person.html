@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vis Person</title>
+</head>
+<body>
+
+<h2>Personoplysninger</h2>
+<div>
+    <p>Navn: <span th:text="${person.name}">Navn</span></p>
+    <p>Alder: <span th:text="${person.age}">Alder</span></p>
+</div>
+<!-- Link tilbage til Index side -->
+<a href="/">Tilbage til Index</a>
+</body>
+</html>

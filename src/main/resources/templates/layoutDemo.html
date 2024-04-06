@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Layout Demo</title>
+    <link rel="stylesheet" th:href="@{/layout.css}">
+</head>
+<body>
+
+<h1>Layout Demonstrations</h1>
+
+<section>
+    <h2>Flexbox</h2>
+    <p>Flexbox er et et-dimensionalt layoutværktøj, der giver os en måde at arrangere elementer, så de opfører sig forudsigeligt, når sidenes layout skal tilpasse sig forskellige skærmstørrelser og forskellige visningsenheder.</p>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+</section>
+
+<section>
+    <h2>Grid</h2>
+    <p>Grid er et to-dimensionalt layoutsystem for web, det betyder, at det kan håndtere både kolonner og rækker. Grid er perfekt til at designe komplekse web layouts og arrangementer.</p>
+    <div class="grid-container">
+        <div class="grid-item">A</div>
+        <div class="grid-item">B</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">D</div>
+        <div class="grid-item">E</div>
+    </div>
+</section>
+
+<a href="/">Tilbage til Index</a>
+
+</body>
+</html>
