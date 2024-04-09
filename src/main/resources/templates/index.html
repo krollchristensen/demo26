@@ -5,28 +5,32 @@
 </head>
 <body>
 <h2>Index Side</h2>
-<!-- Link til Vis Person side -->
+<!-- Links til andre demonstrationssider -->
 <a href="/showPerson">Vis Person</a>
 <a href="/cssDemo">CSS Demo</a>
 <a href="/tableDemo">Table Demo</a>
 <a href="/layoutDemo">Layout Demonstrations</a>
 
 <h2>Dropdown Eksempel</h2>
+<!-- Dropdown menu, hvor optioner er genereret dynamisk fra server-side liste -->
 <select>
     <option th:each="option : ${options}" th:text="${option}"></option>
 </select>
 
 <h2>Tjekbokse Eksempel</h2>
+<!-- Tjekboks, hvis checked tilstand er styret af en server-side variabel -->
 <input type="checkbox" th:checked="${isChecked}"/> Er denne tjekket?
 
 <h2>Billedupload Eksempel</h2>
+<!-- Formular til upload af filer med POST metode og multipart/form-data encoding -->
 <form method="POST" action="/upload" enctype="multipart/form-data">
     <input type="file" name="image"/>
     <button type="submit">Upload</button>
 </form>
+<!-- Viser besked om succesfuld upload, hvis tilgængelig -->
 <h3 th:text="${message}"></h3>
 
-<!-- Viser den uploadede fil hvis tilgængelig -->
+<!-- Viser den uploadede fil, hvis billedet er tilgængeligt, ellers viser download link -->
 <div th:if="${uploadedFilePath}">
     <h2>Uploadet Fil</h2>
     <img th:src="@{${uploadedFilePath}}" th:alt="${message}" th:if="${uploadedFilePath.endsWith('.jpg') || uploadedFilePath.endsWith('.png')}"/>
